@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name = "description" content = "Personal portfolio about Vladislav Verbitskiy as web-developer" />
+<meta name = "keywords" content = "web developer,веб розроботчик, создает сайты, portfolio, personal, портфолио, персональное, резюме, Влад, Vlad, " />
+<meta name = "robots" content = "index,follow" />
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/main.js"></script>
+<title>Personal page | Vadagon</title>
+</head>
+<body>
+    <div id="animate" data-scroll-speed="2">
+        <div id="rope"></div>
+        <div id="hireme"><img alt="" src="img/plate.png"></div>
+    </div>
+<div class="bgheader">
+<!-- <img alt="" id="bgtop" src="img/logod.jpg"> -->
+</div>
+<div id="header">
+    <div id="menu"><img alt="" src="img/munu.png" id="munu"></div>
+    <div id="navleft">VADAGON</div>
+        <ul id="navright" class="show">
+            <li onclick="scrollToElement('about')"><a>ABOUT</a></li>
+            <li onclick="scrollToElement('namepro')"><a>SKILLS</a></li>
+            <li onclick="scrollToElement('nameskills')"><a>PROJECTS</a></li>
+            <li onclick="scrollToElement('contact')"><a>CONTACT</a></li>
+        </ul>
+</div>
+<div class="main">
+    <div id="starter">
+        <p>Nice to meet you</p>
+    </div>
+    <div class="about" id="about">
+        <img alt="" id="avatar" src="img/avas.jpg">
+        <div id="ava"></div>
+        <img alt="" id="sad" src="img/ssad.png">
+        <div class="desc">
+        	<p>I'm senior web developer...</p>
+            <p>If you have hard but interesting project...</p>
+            <p>&darr; &darr; &darr; &nbsp; write me &nbsp; &darr; &darr; &darr; </p>
+        </div>
+    </div>
+</div>
+<div class="skills">
+    <p id="namepro">MY LATEST PROJECTS</p>
+    <div class="projects">
+        <a href="http://www.sprinklepenny.com/"><div class="website penny"><div class="descrimg"><h3>www.sprinklepenny.com</h3><p>Just big free database of books, magazines and comics.</p><i>CLICK TO REDIRECT</i></div><img src="img/bookweb.png" alt="Photo of a site"></div></a>
+        <a href="/csgolounge/"><div class="website toyny"><div class="descrimg"><h3>CS:GO</h3><p>A bot that do all dirty work for you on CSGOlounge.com.</p><i>CLICK TO REDIRECT</i></div><img src="img/Facebook-Messenger-Bot-01.png" alt="Photo of a site"></div></a>
+        <a href="http://www.imperialhotel.ru/"><div class="website burger"><div class="descrimg"><h3>www.imperialhotel.ru</h3><p>Added some functional to this</p><i>CLICK TO REDIRECT</i></div><img src="img/burger.png" alt="Photo of a site"></div></a>
+    </div>
+        <p style="margin-top: -140px;" id="nameskills">MY TOP-SKILLS</p>
+        <div class="skill">
+            <div class="leftside">
+                <div><p>HTML5</p></div>
+                <div><p>CSS3</p></div>
+                <div><p>JavaScript</p></div>
+                <div><p>Canvas</p></div> 
+                <div><p>PHP</p></div>
+            </div>
+            <div class="rightside">
+                <div><p>Bootstrap</p></div>
+                <div><p>Materialize</p></div>
+                <div><p>JQuery / AngularJS</p></div>
+                <div><p>Paper.js</p></div>
+                <div><p>Laravel</p></div>
+            </div>
+            <div class="clearbot"></div>
+        </div>
+    <div class="send" id="contact">
+        <div>
+            <!-- <iframe id="video1" src="https://www.youtube.com/embed/oaMTSOI1Zk4" frameborder="0"></iframe> -->
+            <video id="video1" autoplay loop  poster="img/mmm.jpg">
+                <source src="img/movee.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div id="hoverglass"></div>
+            <div class="conectme">
+                <div id="writeme" onclick="modal()">Write me</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span>designed by me</span><span>thank you, for visited page.</span><span>bye!</span>
+    </div>
+</div>
+<div id="modal">
+    <div id="glass" onclick="closemodal()"></div>
+    <div id="container">
+            <div class="modalhead">Write me here<span onclick="closemodal()">X</span></div>
+            <div class="ingroup" onclick="expandin(1)" id="ingroup1">
+                <div class="inputplace" id="inpyt1">
+                    <input name="email" type="email" id="inpytone" required="">
+                </div>
+                <label id="lab1">Your e-mail</label>
+            </div>
+            <div class="ingroup" id="texarea2">
+                <h3>Message</h3>
+                <textarea id="textarea11"></textarea>
+            </div>
+            <div id="sendmessage" onclick="leftcomm()">SEND</div>
+    </div>
+</div>
+    <script>
+    function leftcomm() {
+        var inpytone = document.getElementById("inpytone").value;
+        var textarea11 = document.getElementById("textarea11").value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                closemodal();
+                alert("Message has sended");
+            }
+        };
+        xhttp.open("POST", "sendmessage.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("writer=" + inpytone + "&txt=" + textarea11);
+    } 
+    </script>
+</body>
+</html>
+
+
+<!-- ns73.domaincontrol.com -->
+<!-- ns74.domaincontrol.com -->
